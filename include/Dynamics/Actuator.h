@@ -1,7 +1,7 @@
 #ifndef ACTUATOR_H
 #define ACTUATOR_H
 
-#include "mppi_brl/Dynamics/ControlTargetComponent.h"
+#include "Dynamics/ControlTargetComponent.h"
 
 #include <math.h>
 

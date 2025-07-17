@@ -1,4 +1,4 @@
-#include "mppi_brl/Dynamics/ComponentGoverner.h"
+#include "Dynamics/ComponentGoverner.h"
 
 ComponentGoverner::ComponentGoverner(std::shared_ptr<DynamicsDatabaseConfig>& databaseconfig)
 : databaseconfig(databaseconfig)  {

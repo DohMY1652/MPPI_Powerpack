@@ -1,4 +1,4 @@
-#include "mppi_brl/Dynamics/FlowControlComponent.h"
+#include "Dynamics/FlowControlComponent.h"
 
 FlowControlComponent::FlowControlComponent(std::vector<double> system_parameters) 
  : orifice_diameter(0.0), flow_rate(0.0), inlet_pressure(0.0),

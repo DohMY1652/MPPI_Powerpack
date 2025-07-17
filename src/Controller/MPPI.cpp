@@ -1,4 +1,4 @@
-#include "mppi_brl/Controller/MPPI.h"
+#include "Controller/MPPI.h"
 
 
 MPPI::MPPI(std::shared_ptr<ControllerDatabaseConfig>& databaseconfig) {}

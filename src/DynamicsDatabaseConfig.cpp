@@ -1,4 +1,4 @@
-#include "mppi_brl/DynamicsDatabaseConfig.h"
+#include "DynamicsDatabaseConfig.h"
 
 DynamicsDatabaseConfig::DynamicsDatabaseConfig(const YAML::Node& config)
      : config(config), distribution_parameters({0.00, 0.00}) {

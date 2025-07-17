@@ -1,7 +1,7 @@
 #ifndef MPPI_H
 #define MPPI_H
 
-#include "mppi_brl/ControllerDatabaseConfig.h"
+#include "ControllerDatabaseConfig.h"
 
 
 class MPPI {

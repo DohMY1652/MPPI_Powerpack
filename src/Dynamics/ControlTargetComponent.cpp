@@ -1,4 +1,4 @@
-#include "mppi_brl/Dynamics/ControlTargetComponent.h"
+#include "Dynamics/ControlTargetComponent.h"
 
 ControlTargetComponent::ControlTargetComponent(std::vector<double> system_parameters)
  : input_flow_rate(0.0), output_flow_rate(0.0), pressure(101.325), 

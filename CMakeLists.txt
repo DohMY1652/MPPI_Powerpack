@@ -215,6 +215,7 @@ add_executable(brl_mppi
   src/Dynamics/Tank.cpp
   src/Dynamics/Actuator.cpp
   src/Dynamics/ComponentGoverner.cpp
+  src/ControllerDatabaseConfig.cpp
   src/Controller/MPPI.cpp
 )
 

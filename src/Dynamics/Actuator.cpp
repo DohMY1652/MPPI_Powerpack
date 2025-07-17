@@ -1,4 +1,4 @@
-#include "mppi_brl/Dynamics/Actuator.h"
+#include "Dynamics/Actuator.h"
 
 Actuator::Actuator(const std::vector<double>& system_parameters)
     : ControlTargetComponent(system_parameters)  {

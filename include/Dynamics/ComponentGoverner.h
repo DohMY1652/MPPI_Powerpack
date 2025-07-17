@@ -1,13 +1,13 @@
 #ifndef COMPONENTGOVERNER_H
 #define COMPONENTGOVERNER_H
 
-#include "mppi_brl/DynamicsDatabaseConfig.h"
+#include "DynamicsDatabaseConfig.h"
 
-#include "mppi_brl/Dynamics/Actuator.h"
-#include "mppi_brl/Dynamics/Tank.h"
-#include "mppi_brl/Dynamics/Pump.h"
-#include "mppi_brl/Dynamics/Valve.h"
-#include "mppi_brl/Dynamics/Ejector.h"
+#include "Dynamics/Actuator.h"
+#include "Dynamics/Tank.h"
+#include "Dynamics/Pump.h"
+#include "Dynamics/Valve.h"
+#include "Dynamics/Ejector.h"
 
 class ComponentGoverner {
     public:

@@ -1,7 +1,7 @@
 #ifndef PUMP_H
 #define PUMP_H
 
-#include "mppi_brl/Dynamics/FlowControlComponent.h"
+#include "Dynamics/FlowControlComponent.h"
 
 #include <math.h>
 

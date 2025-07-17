@@ -10,10 +10,11 @@
 
 class ControllerDatabaseConfig {
    public:
-    ControllerDatabaseConfig(const YAML::Node& config);
-    ~ControllerDatabaseConfig();
+      ControllerDatabaseConfig(const YAML::Node& config);
+      ~ControllerDatabaseConfig();
 
    private:
+      YAML::Node config;
 
 };
 

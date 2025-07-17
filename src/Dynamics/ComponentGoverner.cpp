@@ -1,6 +1,6 @@
-#include "mppi_brl/Components/ComponentGoverner.h"
+#include "mppi_brl/Dynamics/ComponentGoverner.h"
 
-ComponentGoverner::ComponentGoverner(std::shared_ptr<DatabaseConfig>& databaseconfig)
+ComponentGoverner::ComponentGoverner(std::shared_ptr<DynamicsDatabaseConfig>& databaseconfig)
 : databaseconfig(databaseconfig)  {
     control.resize(databaseconfig->get_n_control(), 0.0);
     flow_rate.resize(databaseconfig->get_n_control(), 0.0);

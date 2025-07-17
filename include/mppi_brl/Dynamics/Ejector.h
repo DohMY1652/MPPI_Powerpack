@@ -1,7 +1,7 @@
 #ifndef EJECTOR_H
 #define EJECTOR_H
 
-#include "mppi_brl/Components/FlowControlComponent.h"
+#include "mppi_brl/Dynamics/FlowControlComponent.h"
 
 class Ejector : public FlowControlComponent {
     public:

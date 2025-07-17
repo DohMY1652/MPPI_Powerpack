@@ -1,7 +1,7 @@
 #ifndef TANK_H
 #define TANK_H
 
-#include "mppi_brl/Components/ControlTargetComponent.h"
+#include "mppi_brl/Dynamics/ControlTargetComponent.h"
 
 class Tank: public ControlTargetComponent {
     public:

@@ -1,5 +1,5 @@
-#ifndef DATABASECONFIG_H
-#define DATABASECONFIG_H
+#ifndef DYNAMICSDATABASECONFIG_H
+#define DYNAMICSDATABASECONFIG_H
 
 #include <ros/ros.h>
 #include <yaml-cpp/yaml.h>
@@ -8,10 +8,10 @@
 #include <memory>
 #include <vector>
 
-class DatabaseConfig {
+class DynamicsDatabaseConfig {
    public:
-    DatabaseConfig(const YAML::Node& config);
-    ~DatabaseConfig();
+    DynamicsDatabaseConfig(const YAML::Node& config);
+    ~DynamicsDatabaseConfig();
 
     double get_dt() const;
     int get_N() const;
@@ -63,4 +63,4 @@ class DatabaseConfig {
 
 };
 
-#endif  // DATABASECONFIG_H
+#endif  // DYNAMICSDATABASECONFIG_H

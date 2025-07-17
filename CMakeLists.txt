@@ -206,16 +206,18 @@ include_directories(
 # catkin_add_nosetests(test)
 add_executable(brl_mppi
   src/main.cpp
-  src/DatabaseConfig.cpp
-  src/Components/FlowControlComponent.cpp
-  src/Components/Valve.cpp
-  src/Components/Pump.cpp
-  src/Components/Ejector.cpp
-  src/Components/ControlTargetComponent.cpp
-  src/Components/Tank.cpp
-  src/Components/Actuator.cpp
-  src/Components/ComponentGoverner.cpp
+  src/DynamicsDatabaseConfig.cpp
+  src/Dynamics/FlowControlComponent.cpp
+  src/Dynamics/Valve.cpp
+  src/Dynamics/Pump.cpp
+  src/Dynamics/Ejector.cpp
+  src/Dynamics/ControlTargetComponent.cpp
+  src/Dynamics/Tank.cpp
+  src/Dynamics/Actuator.cpp
+  src/Dynamics/ComponentGoverner.cpp
+  src/Controller/MPPI.cpp
 )
+
 
 target_link_libraries(brl_mppi
   ${catkin_LIBRARIES}

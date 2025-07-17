@@ -1,4 +1,4 @@
-#include "mppi_brl/Components/Valve.h"
+#include "mppi_brl/Dynamics/Valve.h"
 
 Valve::Valve(const std::vector<double>& sysetm_parameters)
  : FlowControlComponent(sysetm_parameters) {

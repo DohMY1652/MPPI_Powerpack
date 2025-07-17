@@ -1,4 +1,4 @@
-#include "mppi_brl/Components/Tank.h"
+#include "mppi_brl/Dynamics/Tank.h"
 
 
 Tank::Tank(const std::vector<double>& system_parameters)

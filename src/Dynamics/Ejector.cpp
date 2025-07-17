@@ -1,4 +1,4 @@
-#include "mppi_brl/Components/Ejector.h"
+#include "mppi_brl/Dynamics/Ejector.h"
 
 Ejector::Ejector(const std::vector<double>& sysetm_parameters)
  : FlowControlComponent(sysetm_parameters) {

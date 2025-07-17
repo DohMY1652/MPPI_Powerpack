@@ -1,6 +1,6 @@
-#include "mppi_brl/DatabaseConfig.h"
+#include "mppi_brl/DynamicsDatabaseConfig.h"
 
-DatabaseConfig::DatabaseConfig(const YAML::Node& config)
+DynamicsDatabaseConfig::DynamicsDatabaseConfig(const YAML::Node& config)
      : config(config), distribution_parameters({0.00, 0.00}) {
     dt = config["system_parameters"]["dt"].as<double>();
     N = config["system_parameters"]["prediction_horizon"].as<int>();
@@ -39,28 +39,28 @@ DatabaseConfig::DatabaseConfig(const YAML::Node& config)
 
 }
 
-DatabaseConfig::~DatabaseConfig() {}
+DynamicsDatabaseConfig::~DynamicsDatabaseConfig() {}
 
-double DatabaseConfig::get_dt() const { return dt; }
-int DatabaseConfig::get_N() const { return N; }
-int DatabaseConfig::get_K() const { return K; }
+double DynamicsDatabaseConfig::get_dt() const { return dt; }
+int DynamicsDatabaseConfig::get_N() const { return N; }
+int DynamicsDatabaseConfig::get_K() const { return K; }
 
-double DatabaseConfig::get_lambda() const { return lambda; }
+double DynamicsDatabaseConfig::get_lambda() const { return lambda; }
 
-double DatabaseConfig::get_P_macro() const {return P_macro;}
+double DynamicsDatabaseConfig::get_P_macro() const {return P_macro;}
 
-int DatabaseConfig::get_n_control() const {return n_control; }
-int DatabaseConfig::get_n_state() const {return n_state;}
+int DynamicsDatabaseConfig::get_n_control() const {return n_control; }
+int DynamicsDatabaseConfig::get_n_state() const {return n_state;}
 
-double DatabaseConfig::get_simulation_frequency() const {return simulation_frequency;}
+double DynamicsDatabaseConfig::get_simulation_frequency() const {return simulation_frequency;}
 
-std::vector<double> DatabaseConfig::get_pump_parameters() const { return pump_parameters; }
-std::vector<double> DatabaseConfig::get_valve_parameters() const { return valve_parameters; }
-std::vector<double> DatabaseConfig::get_ejector_parameters() const { return ejector_parameters; }
-std::vector<double> DatabaseConfig::get_actuator_parameters() const { return actuator_parameters; }
-std::vector<double> DatabaseConfig::get_tank_parameters() const { return tank_parameters; }
+std::vector<double> DynamicsDatabaseConfig::get_pump_parameters() const { return pump_parameters; }
+std::vector<double> DynamicsDatabaseConfig::get_valve_parameters() const { return valve_parameters; }
+std::vector<double> DynamicsDatabaseConfig::get_ejector_parameters() const { return ejector_parameters; }
+std::vector<double> DynamicsDatabaseConfig::get_actuator_parameters() const { return actuator_parameters; }
+std::vector<double> DynamicsDatabaseConfig::get_tank_parameters() const { return tank_parameters; }
 
 
 
-std::vector<double> DatabaseConfig::get_distribution_parameters() const { return distribution_parameters; }
-std::vector<double> DatabaseConfig::get_weights() const { return weights; }
+std::vector<double> DynamicsDatabaseConfig::get_distribution_parameters() const { return distribution_parameters; }
+std::vector<double> DynamicsDatabaseConfig::get_weights() const { return weights; }

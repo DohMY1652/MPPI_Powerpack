@@ -1,17 +1,17 @@
 #ifndef COMPONENTGOVERNER_H
 #define COMPONENTGOVERNER_H
 
-#include "mppi_brl/DatabaseConfig.h"
+#include "mppi_brl/DynamicsDatabaseConfig.h"
 
-#include "mppi_brl/Components/Actuator.h"
-#include "mppi_brl/Components/Tank.h"
-#include "mppi_brl/Components/Pump.h"
-#include "mppi_brl/Components/Valve.h"
-#include "mppi_brl/Components/Ejector.h"
+#include "mppi_brl/Dynamics/Actuator.h"
+#include "mppi_brl/Dynamics/Tank.h"
+#include "mppi_brl/Dynamics/Pump.h"
+#include "mppi_brl/Dynamics/Valve.h"
+#include "mppi_brl/Dynamics/Ejector.h"
 
 class ComponentGoverner {
     public:
-        ComponentGoverner(std::shared_ptr<DatabaseConfig>& databaseconfig);
+        ComponentGoverner(std::shared_ptr<DynamicsDatabaseConfig>& databaseconfig);
         ~ComponentGoverner();
 
         
@@ -29,7 +29,7 @@ class ComponentGoverner {
         double get_force() const;
 
     private:
-        std::shared_ptr<DatabaseConfig>& databaseconfig;
+        std::shared_ptr<DynamicsDatabaseConfig>& databaseconfig;
 
         std::vector<double> control;
         std::vector<double> flow_rate;

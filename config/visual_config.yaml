@@ -1,0 +1,20 @@
+trajectory_marker:
+  scale: 0.03
+  color:
+    r: 0.1
+    g: 0.9
+    b: 0.3
+    a: 1.0
+
+boundary_marker:
+  scale: 0.02
+  color:
+    r: 1.0
+    g: 1.0
+    b: 1.0
+    a: 1.0
+
+
+
+sampled_trajectory:
+  sample_number : 100

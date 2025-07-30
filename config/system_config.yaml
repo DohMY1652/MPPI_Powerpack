@@ -1,7 +1,8 @@
 system_parameters:
-  dt: 0.00001
-  prediction_horizon: 20
-  sampling_number: 10000
+  dt: 0.001
+  prediction_horizon: 3
+  sampling_number: 200
+  tracking_gain : 0.04
 
 distribution_parameters:
   mean: 0
@@ -22,14 +23,14 @@ Valve_parameters:
 
 Ejector_parameters:
   Orifice_diameter: 10  # mm
-  dt : 0.00001
+  dt : 0.001
 
 Actuator_parameters:
   length_of_neg_octagon: 20 # mm
   radius_of_load_shaft: 5 # mm
   External_load: 82 # kg
   L_max: 20 # mm
-  dt : 0.00001
+  dt : 0.001
   positive_diameter : 100 # mm
   positive_length : 50 # mm
   v_tot : 

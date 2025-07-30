@@ -1,7 +1,7 @@
 #ifndef COMPONENTGOVERNER_H
 #define COMPONENTGOVERNER_H
 
-#include "DynamicsDatabaseConfig.h"
+#include "DatabaseConfig.h"
 
 #include "Dynamics/Actuator.h"
 #include "Dynamics/Tank.h"
@@ -11,25 +11,28 @@
 
 class ComponentGoverner {
     public:
-        ComponentGoverner(std::shared_ptr<DynamicsDatabaseConfig>& databaseconfig);
+        ComponentGoverner(std::shared_ptr<DatabaseConfig>& databaseconfig);
         ~ComponentGoverner();
 
         
-        bool set_control(std::vector<double> _control);
-        bool set_state(std::vector<double> _state);
+        bool set_control(const std::vector<double>& _control);
+        bool set_state(const std::vector<double>& _state);
         void calculate_flow_rate();
         void calculate_state_dot();
         void calculate_state();
         
         void calculate_next_state(std::vector<double> _control);
 
+        void update_pump_state(double dt);
+
         std::vector<double> get_state() const;
+        std::vector<double> get_control() const;
         std::vector<double> get_flow_rate() const;
         std::vector<double> get_state_dot() const;
         double get_force() const;
 
     private:
-        std::shared_ptr<DynamicsDatabaseConfig>& databaseconfig;
+        std::shared_ptr<DatabaseConfig>& databaseconfig;
 
         std::vector<double> control;
         std::vector<double> flow_rate;

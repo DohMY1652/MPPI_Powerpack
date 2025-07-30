@@ -1,6 +1,6 @@
 #include "Dynamics/ComponentGoverner.h"
 
-ComponentGoverner::ComponentGoverner(std::shared_ptr<DynamicsDatabaseConfig>& databaseconfig)
+ComponentGoverner::ComponentGoverner(std::shared_ptr<DatabaseConfig>& databaseconfig)
 : databaseconfig(databaseconfig)  {
     control.resize(databaseconfig->get_n_control(), 0.0);
     flow_rate.resize(databaseconfig->get_n_control(), 0.0);
@@ -28,7 +28,7 @@ ComponentGoverner::ComponentGoverner(std::shared_ptr<DynamicsDatabaseConfig>& da
 
 ComponentGoverner::~ComponentGoverner() {}
 
-bool ComponentGoverner::set_control(std::vector<double> _control) {
+bool ComponentGoverner::set_control(const std::vector<double>& _control) {
     if (_control.size() != control.size()) {
         ROS_WARN("Wrong control dimension");
         return false;
@@ -39,7 +39,7 @@ bool ComponentGoverner::set_control(std::vector<double> _control) {
     }
 }
 
-bool ComponentGoverner::set_state(std::vector<double> _state) { 
+bool ComponentGoverner::set_state(const std::vector<double>& _state) { 
     if (_state.size() != state.size()) {
         ROS_WARN("Wrong state dimension");
         return false;
@@ -60,7 +60,6 @@ void ComponentGoverner::calculate_flow_rate() {
     flow_rate[6] = valve->calculate_flow_rate(control[6], state[3], state[1]); // kg/s
     flow_rate[7] = valve->calculate_flow_rate(control[7], Patm, state[3]); // kg/s
     flow_rate[8] = valve->calculate_flow_rate(1.0, state[3], ejector->get_P_suction()); // kg/s
-    // flow_rate[8] = ejector->calculate_suction_flow_rate(state[3]); // kg/s
 }
 
 void ComponentGoverner::calculate_state_dot() {
@@ -81,7 +80,6 @@ void ComponentGoverner::calculate_state() {
     }
     if(state[4] <= 0) { state[4] = 0;}
     if(state[4] >= 0.020) { state[4] = 0.020;}
-    pump->update_P_and_theta(dt);
     actuator->set_positive_pressure(state[2]);
     actuator->set_negative_pressure(state[3]);
     if (control[8] != 0.0) {
@@ -95,7 +93,7 @@ void ComponentGoverner::calculate_state() {
 }
 
 void ComponentGoverner::calculate_next_state(std::vector<double> _control) {
-   
+    
     if (set_control(_control)) {
         calculate_flow_rate();
         calculate_state_dot();
@@ -103,9 +101,18 @@ void ComponentGoverner::calculate_next_state(std::vector<double> _control) {
     }
 }
 
+void ComponentGoverner::update_pump_state(double dt) {
+    pump->update_P_and_theta(dt);
+}
+
 std::vector<double> ComponentGoverner::get_state() const {
     return state;
 }
+
+std::vector<double> ComponentGoverner::get_control() const {
+    return control;
+}
+
 
 std::vector<double> ComponentGoverner::get_flow_rate() const {
     return flow_rate;

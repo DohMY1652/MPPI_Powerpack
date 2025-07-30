@@ -206,7 +206,7 @@ include_directories(
 # catkin_add_nosetests(test)
 add_executable(brl_mppi
   src/main.cpp
-  src/DynamicsDatabaseConfig.cpp
+  src/DatabaseConfig.cpp
   src/Dynamics/FlowControlComponent.cpp
   src/Dynamics/Valve.cpp
   src/Dynamics/Pump.cpp
@@ -215,7 +215,6 @@ add_executable(brl_mppi
   src/Dynamics/Tank.cpp
   src/Dynamics/Actuator.cpp
   src/Dynamics/ComponentGoverner.cpp
-  src/ControllerDatabaseConfig.cpp
   src/Controller/MPPI.cpp
 )
 

@@ -13,6 +13,8 @@ class Pump : public FlowControlComponent {
         double calculate_flow_rate_out(double control, double Pin, double Pout);
         void update_P_and_theta(double dt);
 
+
+
     private:
         const double R = 0.287 ; // kJ/(kg*K)
         const double T = 293.15 ; // K
@@ -25,9 +27,10 @@ class Pump : public FlowControlComponent {
         double pi_function;
 
         const double Patm = 101.325; // kPa
-        // const double Ccv_out = 1.46; // mm^2   
-        const double Ccv_out = 33.47; // mm^2   
-        const double Ccv_in = 33.47; // mm^2   
+        // const double Ccv_out = 33.47; // mm^2   
+        // const double Ccv_in = 33.47; // mm^2 
+        const double Ccv_out = 150.0; // mm^2   
+        const double Ccv_in = 150.0; // mm^2   
 
         const double delta = 0.041; // m
         const double r = 0.02; // m

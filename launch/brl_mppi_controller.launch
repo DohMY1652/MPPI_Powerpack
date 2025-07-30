@@ -1,7 +1,6 @@
 <launch>
-  <param name="dynamics_parameters_yaml_file" value="$(find mppi_brl)/config/dynamics_config.yaml" />
+  <param name="system_parameters_yaml_file" value="$(find mppi_brl)/config/system_config.yaml" />
   <param name="visualizing_parameters_yaml_file" value="$(find mppi_brl)/config/visual_config.yaml" />
-  <param name="controller_parameters_yaml_file" value="$(find mppi_brl)/config/controller_config.yaml" />
   <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mppi_brl)/config/mppi_viz.rviz" /> -->
   <node name="mppi_controller" pkg="mppi_brl" type="brl_mppi" output="screen" />
 </launch>
